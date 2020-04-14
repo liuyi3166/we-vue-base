@@ -11,15 +11,31 @@
       $t('home.wlkVueTemplateIntro')
     }}</router-link>
     <div style="display:none;">{{ deviceInfo }}</div>
+    <wv-radio-group v-model="radios" @change="changList">
+      <wv-radio v-for="city in cities" :label="city" :key="city" :text="city" :placeholder="city" :content="city"></wv-radio>
+    </wv-radio-group>
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex';
-
+import wvRadio from '@/components/WvRadio/radio.vue'
+import wvRadioGroup from '@/components/WvRadio/radio-group.vue'
 export default {
   data() {
-    return {};
+    return {
+      label:'选择',
+      placeholder: '请选择数据',
+      checkVaule: true,
+      radios:'北京',
+      checkList: ['北京','上海'],
+      cities:['北京','上海','广州','深圳'],
+      checked: true
+    };
+  },
+  components: {
+    wvRadio,
+    wvRadioGroup
   },
   created() {
     window.HWH5.navTitle({ title: 'Hello World!' });
@@ -29,7 +45,13 @@ export default {
     ...mapState(['deviceInfo'])
   },
   methods: {
-    ...mapActions(['getDeviceInfo'])
+    ...mapActions(['getDeviceInfo']),
+    click(event){
+      console.log('>>>>>>>>>>>>>>>>>>>>>>>>>')
+    },
+    changList(data){
+      console.log('changList:', data, this.radios)
+    }
   }
 };
 </script>

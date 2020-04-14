@@ -1,5 +1,4 @@
 <template>
-<div class="weui-cells" :class="[classType]">
   <label
     class="weui-cell weui-cell-list weui-check__label"
     role="checkbox"
@@ -41,7 +40,6 @@
       </div>
      </div>
   </label>
-  </div>
 </template>
 <script>
   import Emitter from '../../mixins/emitter';

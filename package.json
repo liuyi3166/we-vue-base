@@ -1,1 +1,24 @@
-{}
+{
+  "name": "we-vue-base",
+  "description": "wecode-vue-template是基于 vue-cli3.0 制作的We码开发模板，符合 WLK-CLI 集成规范，允许开发者自由定制。",
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuyi3166/we-vue-base.git"
+  },
+  "author": "liuyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liuyi3166/we-vue-base/issues"
+  },
+  "homepage": "https://github.com/liuyi3166/we-vue-base#readme",
+  "keywords": [
+    "wecode",
+    "vue",
+    "base"
+  ]
+}

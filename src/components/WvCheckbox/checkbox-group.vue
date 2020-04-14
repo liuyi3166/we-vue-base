@@ -15,6 +15,10 @@
 
     props: {
       value: {},
+      type:{
+        type: String,
+        default: 'square'  // square：方形  circular：圆形
+      },
       disabled: Boolean,
       min: Number,
       max: Number,
@@ -22,7 +26,11 @@
       fill: String,
       textColor: String
     },
-
+    data() {
+      return {
+        classType:this.type === 'circular'? 'weui-cells_checkbox' : 'weui-cells_checkbox2'
+      };
+    },
     computed: {
       _WvFormItemSize() {
         return (this.WvFormItem || {}).WvFormItemSize;
@@ -41,7 +49,7 @@
 </script>
 
 <template>
-  <div class="weui-cells weui-cells_checkbox" role="group" aria-label="checkbox-group">
+  <div class="weui-cells" :class="[classType]" role="group" aria-label="checkbox-group">
     <slot></slot>
   </div>
 </template>

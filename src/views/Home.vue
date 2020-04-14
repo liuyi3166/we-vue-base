@@ -14,6 +14,7 @@
     <wv-radio-group v-model="radios" @change="changList">
       <wv-radio v-for="city in cities" :label="city" :key="city" :text="city" :placeholder="city" :content="city"></wv-radio>
     </wv-radio-group>
+    <wv-slider v-model="value1" @change="changList" :min="10" :max="30" :showBar="true"></wv-slider>
   </div>
 </template>
 
@@ -21,6 +22,7 @@
 import { mapState, mapActions } from 'vuex';
 import wvRadio from '@/components/WvRadio/radio.vue'
 import wvRadioGroup from '@/components/WvRadio/radio-group.vue'
+import wvSlider from '@/components/WvSlider'
 export default {
   data() {
     return {
@@ -28,6 +30,7 @@ export default {
       placeholder: '请选择数据',
       checkVaule: true,
       radios:'北京',
+      value1:15,
       checkList: ['北京','上海'],
       cities:['北京','上海','广州','深圳'],
       checked: true
@@ -35,6 +38,7 @@ export default {
   },
   components: {
     wvRadio,
+    wvSlider,
     wvRadioGroup
   },
   created() {
@@ -50,7 +54,7 @@ export default {
       console.log('>>>>>>>>>>>>>>>>>>>>>>>>>')
     },
     changList(data){
-      console.log('changList:', data, this.radios)
+      console.log('changList:', data, this.value1)
     }
   }
 };
